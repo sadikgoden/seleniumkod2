@@ -14,7 +14,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import java.time.Duration;
 
 public class C01_Assertions {
-    //2) https://www.bestbuy.com/ Adresine gidin
+    //   2) https://www.bestbuy.com/ Adresine gidin
     //   farkli test method’lari olusturarak asagidaki testleri yapin
     //      ○ Sayfa URL’inin https://www.bestbuy.com/ ‘a esit oldugunu test edin
     //      ○ titleTest => Sayfa başlığının “Rest” içermediğini(contains) test edin
@@ -45,10 +45,11 @@ public class C01_Assertions {
     //  ○ titleTest => Sayfa başlığının “Rest” içermediğini(contains) test edin
     @Test
     public void titlrTest (){
-        String unexpectedIcerikUrl ="Rest";
-        String actualUrl = driver.getCurrentUrl();
-        Assert.assertFalse(actualUrl.contains(unexpectedIcerikUrl));
+        String unexpectedIcerikTitle ="Rest";
+        String actualTitle = driver.getTitle();
+        Assert.assertFalse(actualTitle.contains(unexpectedIcerikTitle));
     }
+
     //      ○ logoTest => BestBuy logosunun görüntülendigini test edin
     @Test
     public void logoTest(){
@@ -56,6 +57,7 @@ public class C01_Assertions {
         Assert.assertTrue(logoElementi.isDisplayed());
 
     }
+
     //      ○ FrancaisLinkTest => Fransizca Linkin görüntülendiğini test edin
     @Test
     public void FrancaisLinkTesti (){

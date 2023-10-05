@@ -18,6 +18,7 @@ public class C02_dropdownTesti extends TestBase_BeforeClass {
    public void amazonGidis(){
        //● https://www.amazon.com/ adresine gidin.
        driver.get("https://www.amazon.com/");
+
        kategoriDropdownElementi= driver.findElement(By.xpath("//*[@id='searchDropdownBox']"));
        select = new Select(kategoriDropdownElementi);
     }

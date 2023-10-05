@@ -20,7 +20,7 @@ public class C01_dropdownTesti extends TestBase {
         Select select =new Select(dropElementi);
         bekle(2);
         //  1.Index kullanarak Seçenek 1’i (Option 1) seçin ve yazdırın
-            select.selectByIndex(1);
+        select.selectByIndex(1);
         System.out.println(select.getFirstSelectedOption().getText());
         bekle(2);
         //  2.Value kullanarak Seçenek 2'yi (Option 2) seçin ve yazdırınv
@@ -34,13 +34,13 @@ public class C01_dropdownTesti extends TestBase {
         //  4.Tüm dropdown değerleri(value) yazdırın
         System.out.println("=======tüm hepsi========");
         List<WebElement> optionsList = select.getOptions();
-        for (WebElement each: optionsList
-             ) {
-            System.out.println(each.getText());
-        }
+       for (WebElement each: optionsList){
+           System.out.println(each.getText());
+       }
+
         //  5. Dropdown’un boyutunun 4 olduğunu test edin
         int expectedBoyut =4;
-        int actualBoyut =optionsList.size();
+       int actualBoyut =optionsList.size();
        Assert.assertEquals("Dropdown menu boyutu 4 degil",expectedBoyut,actualBoyut);
     }
 }

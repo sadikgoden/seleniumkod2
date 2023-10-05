@@ -31,7 +31,6 @@ public class C02_assertionss_chekBox {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         driver.get("https://www.youtube.com");
         ReusableMethods.bekle(1);
-
     }
     @AfterClass
     public static void teardown(){
@@ -46,7 +45,8 @@ public class C02_assertionss_chekBox {
     }
     @Test
     public void imageTest(){
-        //  ○ imageTest   => YouTube resminin görüntülendiğini (isDisplayed()) test edin
+        //  ○ imageTest   => YouTube resminin görüntülendiğini (isDisplayed()) test edin //
+        // a[@class='yt-simple-endpoint style-scope ytd-topbar-logo-renderer'][1]
         WebElement logoElementi = driver.findElement(By.xpath("(//div[@class='style-scope ytd-topbar-logo-renderer'])[1]"));
         Assert.assertTrue(logoElementi.isDisplayed());
     }

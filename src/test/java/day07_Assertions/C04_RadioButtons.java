@@ -1,5 +1,6 @@
 package day07_Assertions;
 
+import Utilities.ReusableMethods;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Assert;
@@ -31,15 +32,18 @@ public class C04_RadioButtons {
         //  a. Verilen web sayfasına gidin.
         //       https://facebook.com
         driver.get("https://facebook.com");
+        ReusableMethods.bekle(2);
         //  b. Cookies’i kabul edin
-        driver.findElement(By.xpath("//button[@title='Allow all cookies']")).click();
+      //  driver.findElement(By.xpath("//button[@title='Allow all cookies']")).click();
         //  c. Create an account buton’una basin
         driver.findElement(By.xpath("//*[@*='open-registration-form-button']")).click();
+        ReusableMethods.bekle(3);
         //  d. Radio button elementlerini locate edin ve size uygun olani secin
         WebElement femaleRadioB = driver.findElement(By.xpath("(//input[@*='_8esa'])[1]"));
         WebElement maleRadioB = driver.findElement(By.xpath("(//input[@*='_8esa'])[2]"));
         WebElement customRadioB = driver.findElement(By.xpath("(//input[@*='_8esa'])[3]"));
         maleRadioB.click();
+        ReusableMethods.bekle(3);
         //  e. Sectiginiz radio button’un seçili, ötekilerin seçili olmadigini test edin
                  Assert.assertTrue(maleRadioB.isSelected()
                 && !femaleRadioB.isSelected()
@@ -48,26 +52,3 @@ public class C04_RadioButtons {
 
 
 }
-/*
-
-    @Test
-    public void radioButtonTest(){
-        //  a. Verilen web sayfasına gidin.
-        //       https://facebook.com
-        driver.get("https://facebook.com");
-        //  b. Cookies’i kabul edin
-        driver.findElement(By.xpath("//button[@title='Allow all cookies']")).click();
-        //  c. Create an account buton’una basin
-        driver.findElement(By.xpath("//*[@*='open-registration-form-button']")).click();
-        //  d. Radio button elementlerini locate edin ve size uygun olani secin
-        WebElement femaleRadioB = driver.findElement(By.xpath("(//input[@*='_8esa'])[1]"));
-        WebElement maleRadioB = driver.findElement(By.xpath("(//input[@*='_8esa'])[2]"));
-        WebElement customRadioB = driver.findElement(By.xpath("(//input[@*='_8esa'])[3]"));
-        maleRadioB.click();
-        //  e. Sectiginiz radio button’un seçili, ötekilerin seçili olmadigini test edin
-        Assert.assertTrue(maleRadioB.isSelected()
-                            && !femaleRadioB.isSelected()
-                            && !customRadioB.isSelected());
-    }
-
- */

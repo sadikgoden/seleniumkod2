@@ -20,7 +20,7 @@ import java.time.Duration;
     }
     @AfterClass
     public static void teardown (){
-        driver.close();
+        driver.quit();
     }
 
     public static void bekle(int saniye) {
