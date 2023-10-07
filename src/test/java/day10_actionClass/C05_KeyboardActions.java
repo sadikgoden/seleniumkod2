@@ -45,9 +45,4 @@ public class C05_KeyboardActions extends TestBase {
         bekle(6);
         //5- Kaydol tusuna basalim
         driver.findElement(By.name("websubmit")).click();
-}}/*
-        //5- Kaydol tusuna basalim
-        driver.findElement(By.xpath("//button[@name='websubmit']")).click();
-        bekle(10);
-    }
- */
+}}
