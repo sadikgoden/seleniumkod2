@@ -29,6 +29,7 @@ public class C04_ExplicitlyWait {
      //5. Enable butonuna tıklayın ve textbox etkin oluncaya kadar bekleyin
      driver.findElement(By.xpath("//button[normalize-space()='Enable']")).click();
        /*
+       incele
             Explicit Wait ile beklemek icin
             1- beklemek icin wait objesi olusturalim
             2- hangi web element beklenecekse locate edelim
