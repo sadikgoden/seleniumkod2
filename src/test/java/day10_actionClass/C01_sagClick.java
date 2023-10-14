@@ -45,5 +45,6 @@ public class C01_sagClick extends TestBase{
         String expectedYazi = "Make sure your code lands";
         String actualYazi = driver.findElement(By.tagName("h1")).getText();
         Assert.assertEquals(expectedYazi,actualYazi);
+        System.out.println("sds");
     }
 }

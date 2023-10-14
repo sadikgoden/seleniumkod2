@@ -1,6 +1,7 @@
 package TEKRARTEKRAR;
 
 import org.apache.poi.ss.usermodel.*;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -9,51 +10,42 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.TreeMap;
 
+
 public class C01_Day13 {
-@Test
+     @Test
     public void readExcelTesti() throws IOException {
-    // excel için gerekli ayarları yapalım
-    String dosyaYolu = "C:\\Users\\ASUS-PC\\Team120_JUnit_Fall2023\\src\\test\\java\\day13_excelOtomasyonu\\ulkeler.xlsx";
-    FileInputStream fis = new FileInputStream(dosyaYolu);
-    Workbook workbook= WorkbookFactory.create(fis);
+         // excel için gerekli ayarları yapalım
+            String dosyaYolu = "C:\\Users\\ASUS-PC\\Team120_JUnit_Fall2023\\src\\test\\java\\day13_excelOtomasyonu\\ulkeler.xlsx";
+         FileInputStream fis = new FileInputStream(dosyaYolu);
+         Workbook workbook= WorkbookFactory.create(fis);
+         Sheet sheet = workbook.getSheet("Sayfa1");
+         // mesela Sayfa1 deki 6. satırın 3. Cell ini yazdıralım
 
-    // mesela Sayfa1 deki 4. satırın 3. Cell ini yazdıralım
-    Sheet sheet= workbook.getSheet("Sayfa1");
-    Row row= sheet.getRow(3);
-    Cell cell = row.getCell(2);
-    System.out.println(cell);
-    //	- 1.satirdaki 2.hucreye gidelim ve yazdiralim
-    System.out.println(sheet.getRow(0).getCell(1));
-    //- 1.satirdaki 2.hucreyi bir string degiskene atayalim ve yazdiralim
-        String istenenData = sheet.getRow(0).getCell(1).toString();
-    System.out.println(istenenData);
-    //- 2.satir 4.cell’in afganistan’in baskenti Kabil oldugunu test edelim
-        String expectedData = "Kabil";
-        String actualDAta = sheet.getRow(1).getCell(3).toString();
-    Assert.assertEquals(expectedData,actualDAta);
-    //	- Satir sayisini bulalim
-    System.out.println(sheet.getLastRowNum()+1);
+         //	- 1.satirdaki 2.hucreye gidelim ve yazdiralim
 
-    //- Fiziki olarak kullanilan satir sayisini bulun
-    System.out.println(sheet.getPhysicalNumberOfRows());
-    //- Ingilizce Ulke isimleri ve baskentleri bir map olarak kaydedelim
-    String isim;
-    String baskent ;
-    Map<String,String> ulkelermap = new TreeMap<>();
-    for (int i = 1; i <=sheet.getLastRowNum() ; i++) {
-        isim=sheet.getRow(i).getCell(0).toString();
-        baskent=sheet.getRow(i).getCell(1).toString();
+         //- 1.satirdaki 2.hucreyi bir string degiskene atayalim ve yazdiralim
 
-        ulkelermap.put(isim,baskent);
-    }
+         //- 2.satir 4.cell’in afganistan’in baskenti Kabil oldugunu test edelim
 
-    // Ulkeler excel'inde Canada isimli bir ulke oldugunu test edin
-        Assert.assertTrue(ulkelermap.containsKey("Canada"));
-    // Ulkeler excel'inde Cuba'nin baskentinin Havana oldugunu test edin
+         //	- Satir sayisini bulalim
 
-        String expectedBaskent="Havana";
-        String actualBaskent=ulkelermap.get("Cuba");
-        Assert.assertEquals(expectedBaskent,actualBaskent);
+         // - Fiziki olarak kullanilan satir sayisini bulun
+
+         //- Ingilizce Ulke isimleri ve baskentleri bir map olarak kaydedelim
+            String isim ;
+            String baskent ;
+         Map<String ,String> ulkelerMap = new TreeMap<>();
+         for (int i = 1 ; i <= sheet.getLastRowNum() ; i++) {
+             isim = sheet.getRow(i).getCell(0).toString();
+             baskent = sheet.getRow(i).getCell(1).toString();
+             ulkelerMap.put(isim,baskent);
+         }
+         // Ulkeler excel'inde Canada isimli bir ulke oldugunu test edin,
+         Assert.assertTrue(ulkelerMap.containsKey("Canada"));
+         // Ulkeler excel'inde Cuba'nin baskentinin Havana oldugunu test edin
+         String expectedBAskent = "Havana";
+         String actualBaskent = ulkelerMap.get("Cuba");
+         Assert.assertEquals(expectedBAskent,actualBaskent);
 }
 
 }
