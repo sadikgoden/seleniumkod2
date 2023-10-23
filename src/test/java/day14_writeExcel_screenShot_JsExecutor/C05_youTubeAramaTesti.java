@@ -23,8 +23,8 @@ public class C05_youTubeAramaTesti extends TestBase {
         String expectedIcerik= "QA";
         String actualVideoIsmi =ilVideoIsmi.getText();
         System.out.println(actualVideoIsmi);
-      //  Assert.assertTrue(actualVideoIsmi);
-// ilk videonun fotografini cekin
+        //  Assert.assertTrue(actualVideoIsmi);
+       // ilk videonun fotografini cekin
 
     }
 

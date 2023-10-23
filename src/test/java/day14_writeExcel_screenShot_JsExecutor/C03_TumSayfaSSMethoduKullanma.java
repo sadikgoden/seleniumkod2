@@ -1,14 +1,13 @@
 package day14_writeExcel_screenShot_JsExecutor;
 
+import Utilities.ReusableMethods;
 import Utilities.TestBase;
 
+import org.junit.Assert;
+import org.junit.Test;
+
 public class C03_TumSayfaSSMethoduKullanma extends TestBase {
-
-
-
-}
-/*
- @Test
+    @Test
     public void testWise(){
         // wisequarter anasayfaya gidin
         driver.get("https://www.wisequarter.com");
@@ -19,6 +18,11 @@ public class C03_TumSayfaSSMethoduKullanma extends TestBase {
         // sonucu raorlamak icin tum sayfa screenshot alip kaydedin
         ReusableMethods.tumSayfaFotografCek(driver,"wise");
     }
+
+
+
+}
+/*
     @Test
     public void testAB(){
         // ahmetbulutluoz.com anasayfaya gidin
