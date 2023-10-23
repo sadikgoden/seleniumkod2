@@ -1,5 +1,6 @@
 package day14_writeExcel_screenShot_JsExecutor;
 
+import Utilities.ReusableMethods;
 import Utilities.TestBase;
 import org.junit.Assert;
 import org.junit.Test;
@@ -15,17 +16,21 @@ public class C05_youTubeAramaTesti extends TestBase {
         // cookies kabul edin
 
         // ahmet bulutluoz icin arama yapin
-        WebElement aramaKutusu = driver.findElement(By.xpath("//*[@id='search-container']"));
+        WebElement aramaKutusu = driver.findElement(By.xpath("//input[@id='search']"));
         aramaKutusu.click();
-        aramaKutusu.sendKeys("ahmet Bulutluöz"+ Keys.ENTER);
-        // bulunan videolardan ilkinin isminde bulut gectigini test edin
-        WebElement ilVideoIsmi = driver.findElement(By.xpath(""));
-        String expectedIcerik= "QA";
-        String actualVideoIsmi =ilVideoIsmi.getText();
-        System.out.println(actualVideoIsmi);
-        //  Assert.assertTrue(actualVideoIsmi);
-       // ilk videonun fotografini cekin
+        aramaKutusu.sendKeys("Ahmet Bulutluoz" + Keys.ENTER);
 
+        // bulunan videolardan ilkinin isminde QA gectigini test edin
+
+        WebElement ilkVideoIsmi = driver.findElement(By.xpath("(//a[@id='video-title'])[1]"));
+
+        String expectedIcerik = "QA";
+        String actualVideoIsmi= ilkVideoIsmi.getText();
+        System.out.println(actualVideoIsmi);
+        Assert.assertTrue(actualVideoIsmi.contains(expectedIcerik));
+        // ilk video isminin fotografini cekin
+       ReusableMethods.webElementFotografCek(ilkVideoIsmi,"Ahmet youtube");
+        bekle(3);
     }
 
 }
