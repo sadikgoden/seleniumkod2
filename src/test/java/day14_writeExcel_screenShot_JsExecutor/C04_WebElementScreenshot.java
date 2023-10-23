@@ -31,14 +31,6 @@ public class C04_WebElementScreenshot extends TestBase {
         File geciciResim = sonucYaziElementi.getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(geciciResim,sonucYazisiSS);
         ReusableMethods.webElementFotografCek(sonucYaziElementi,"NutellaArama");
-}}
-/*
-
-        File sonucYazisiSS = new File("target/screenShots/sonucYazisi.jpg");
-        File geciciResim = sonucYaziElementi.getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(geciciResim,sonucYazisiSS);
-        ReusableMethods.webElementFotografCek(sonucYaziElementi,"NutellaArama");
-    }
+}
 }
 
- */
