@@ -19,6 +19,17 @@ public class C03_TumSayfaSSMethoduKullanma extends TestBase {
         ReusableMethods.tumSayfaFotografCek(driver,"wise");
     }
 
+    @Test
+    public void testAB(){
+        // ahmetbulutluoz.com anasayfaya gidin
+        driver.get("https://www.ahmetbulutluoz.com");
+        // url'in bulut icerdigini test edin
+        String expectedIcerik = "bulut";
+        String actualUrl = driver.getCurrentUrl();
+        Assert.assertTrue(actualUrl.contains(expectedIcerik));
+        // sonucu raporlamak icin tum sayfa screenshot alip kaydedin
+        ReusableMethods.tumSayfaFotografCek(driver,"AB");
+    }
 
 
 }
