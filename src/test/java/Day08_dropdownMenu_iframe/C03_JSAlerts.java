@@ -70,10 +70,10 @@ public class C03_JSAlerts extends TestBase {
 
         //	- 3.alert'e tiklayalim
         driver.findElement(By.xpath("//*[text()='Click for JS Prompt']")).click();
-
+            bekle(3);
         //	- Cikan prompt ekranina "Abdullah" yazdiralim
         driver.switchTo().alert().sendKeys("Abdullah");
-
+        bekle(3);
         //	- OK tusuna basarak alert'i kapatalim
         driver.switchTo().alert().accept();
 
